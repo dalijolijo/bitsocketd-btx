@@ -4,24 +4,24 @@ message bus for bitcore
 
 # Prerequisites
 
-bitsocketd has a dependency on bitdb.
+bitsocketd-btx has a dependency on bitdb-btx.
 
-[Install bitd](https://docs.bitdb.network/docs/install)
+[Install bitd-btx](https://docs.bitdb.network/docs/install)
 
 # Install
 
 ```
-npm install --save bitsocketd
+npm install --save bitsocketd-btx
 ```
 
 # Usage
 
 ## 1. Basic
 
-If you already have BitDB running on port 28339, you can simply do this:
+If you already have BitDB running on port 28555, you can simply do this:
 
 ```
-const bitsocketd = require('bitsocketd')
+const bitsocketd = require('bitsocketd-btx')
 bitsocketd.init()
 ```
 
@@ -40,13 +40,13 @@ That's the raw firehose. You probably don't want to consume the whole thing, so 
 You can specify the Zeromq subscriber from a bitdb node, like this:
 
 ```
-const bitsocketd = require('bitsocketd')
+const bitsocketd = require('bitsocketd-btx')
 bitsocketd.init({
-  bit: { host: "127.0.0.1", port: 28339 },
+  bit: { host: "127.0.0.1", port: 28555 },
 })
 ```
 
-By default Bitdb's zeromq publisher broadcasts to [port 28339](https://github.com/21centurymotorcompany/bitd/blob/master/config.js#L44), but you can customize if you want.
+By default Bitdb's zeromq publisher broadcasts to [port 28555](https://github.com/dalijolijo/bitd-btx/blob/master/config.js#L44), but you can customize if you want.
 
 
 ## 3. Custom SSE port
@@ -54,7 +54,7 @@ By default Bitdb's zeromq publisher broadcasts to [port 28339](https://github.co
 By default, the SSE port is automatically 3001. You can customize this:
 
 ```
-const bitsocketd = require('bitsocketd')
+const bitsocketd = require('bitsocketd-btx')
 bitsocketd.init({
   socket: { port: 3001 }
 })
@@ -71,7 +71,7 @@ app.listen(3000 , function () {
 })
 
 // Step 2. pass the express server to bitsocketd
-const bitsocketd = require('bitsocketd')
+const bitsocketd = require('bitsocketd-btx')
 bitsocketd.init({
   socket: { app: app }
 })
