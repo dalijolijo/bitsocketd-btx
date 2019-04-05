@@ -1,6 +1,6 @@
-# bitsocketd
+# bitsocketd-btx
 
-message bus for bitcoin
+message bus for bitcore
 
 # Prerequisites
 
