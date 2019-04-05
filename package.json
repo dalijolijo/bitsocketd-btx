@@ -13,9 +13,9 @@
     "url": "git://github.com/dalijolijo/bitsocketd-btx.git"
   },
   "dependencies": {
+    "bitcore-lib-btx": "git://github.com/dalijolijo/bitcore-lib-btx#master",
     "bcode": "0.0.6",
     "bigjq": "0.0.7",
-    "@dalijolijo/bitcore-lib-btx": "github:dalijolijo/bitcore-lib-btx",
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "ip": "^1.1.5",
