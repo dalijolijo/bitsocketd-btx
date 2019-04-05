@@ -1,17 +1,21 @@
 {
-  "name": "bitsocketd",
+  "name": "bitsocketd-btx",
   "version": "0.1.1",
-  "description": "The message bus for bitcoin",
+  "description": "The message bus for bitcore",
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint *.js"
   },
-  "author": "",
+  "author": "dalijolijo",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dalijolijo/bitsocketd-btx.git"
+  },
   "dependencies": {
     "bcode": "0.0.6",
     "bigjq": "0.0.7",
-    "bitcore-lib-cash": "^0.18.1",
+    "@dalijolijo/bitcore-lib-btx": "github:dalijolijo/bitcore-lib-btx",
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "ip": "^1.1.5",

@@ -2,7 +2,7 @@
 const cors = require("cors")
 const express = require("express")
 const ip = require("ip")
-const bch = require("bitcore-lib-cash")
+const btx = require("bitcore-lib-btx")
 const defaults = { port: 3001 }
 const init = function(config) {
   let app = (config.app ? config.app : express())
@@ -29,8 +29,8 @@ const init = function(config) {
         "v": 3, "q": { "find": {} }
       }
 
-      // bitcoin address as fingerprint
-      const privateKey = new bch.PrivateKey()
+      // bitcore address as fingerprint
+      const privateKey = new btx.PrivateKey()
       const fingerprint = privateKey.toAddress().toString()
 
       res.$fingerprint = fingerprint
@@ -51,8 +51,8 @@ const init = function(config) {
     try {
       let b64 = req.params[0]
 
-      // bitcoin address as fingerprint
-      const privateKey = new bch.PrivateKey()
+      // bitcore address as fingerprint
+      const privateKey = new btx.PrivateKey()
       const fingerprint = privateKey.toAddress().toString()
 
       res.sseSetup()
@@ -80,8 +80,8 @@ const init = function(config) {
     app.listen(port , function () {
       console.log("######################################################################################")
       console.log("#")
-      console.log("#  BITSOCKET: Universal Programmable Bitcoin Push Notifications Network")
-      console.log("#  Pushing Bitcoin in realtime through Server Sent Events...")
+      console.log("#  BITSOCKET: Universal Programmable Bitcore Push Notifications Network")
+      console.log("#  Pushing Bitcore in realtime through Server Sent Events...")
       console.log("#")
       console.log(`#  API Endpoint: ${ip.address()}:${port}/s`)
       console.log("#")
